@@ -5,94 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pengaturan | Monitoring IoT</title>
   <meta name="description" content="Pengaturan akun dan konfigurasi sistem monitoring IoT." />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/dashboard.css" />
-  <style>
-    .settings-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-    @media (max-width: 768px) {
-      .settings-grid { grid-template-columns: 1fr; }
-    }
-    .form-field {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 16px;
-    }
-    .form-field label {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .form-field input, .form-field select, .form-field textarea {
-      padding: 10px 14px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--text);
-      font-size: 0.95rem;
-      transition: border-color 0.2s;
-      outline: none;
-    }
-    .form-field input:focus, .form-field select:focus {
-      border-color: var(--primary);
-    }
-    .toggle-switch {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .toggle-switch:last-child { border-bottom: none; }
-    .toggle-switch span { font-size: 0.95rem; }
-    .toggle-switch small { color: var(--muted); font-size: 0.8rem; display: block; }
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 44px;
-      height: 24px;
-      flex-shrink: 0;
-    }
-    .switch input { opacity: 0; width: 0; height: 0; }
-    .slider {
-      position: absolute; cursor: pointer;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: var(--border);
-      border-radius: 24px;
-      transition: 0.3s;
-    }
-    .slider:before {
-      position: absolute; content: "";
-      height: 18px; width: 18px;
-      left: 3px; bottom: 3px;
-      background: white;
-      border-radius: 50%;
-      transition: 0.3s;
-    }
-    .switch input:checked + .slider { background: var(--primary); }
-    .switch input:checked + .slider:before { transform: translateX(20px); }
-    .save-btn {
-      margin-top: 8px;
-    }
-    .alert-success {
-      display: none;
-      background: rgba(16,185,129,0.1);
-      border: 1px solid rgba(16,185,129,0.3);
-      color: #10b981;
-      padding: 10px 16px;
-      border-radius: 10px;
-      font-size: 0.9rem;
-      margin-top: 12px;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css?v=1" />
 </head>
-<body>
+<body class="dashboard-body">
   <div class="app-shell">
     <!-- Sidebar -->
     <aside class="sidebar">
@@ -105,7 +20,7 @@
         <a href="sensor.html" id="nav-sensor">🌡 Sensor</a>
         <a href="riwayat.html" id="nav-riwayat">📈 Riwayat</a>
         <a href="pengaturan.html" id="nav-pengaturan" class="active">⚙ Pengaturan</a>
-        <a href="#" id="logoutBtn" class="logout">↩ Keluar</a>
+        <a href="login.html" id="logoutBtn" class="logout">↩ Keluar</a>
       </nav>
     </aside>
 
@@ -135,7 +50,7 @@
             </div>
             <div class="form-field">
               <label>Email</label>
-              <input type="email" id="userEmail" placeholder="email@contoh.com" readonly style="opacity:0.6;cursor:not-allowed" />
+              <input type="email" id="userEmail" placeholder="email@contoh.com" readonly class="input-disabled" />
             </div>
             <div class="form-field">
               <label>Zona Waktu</label>
@@ -217,14 +132,14 @@
           <div class="panel-header">
             <h3>ℹ️ Informasi Sistem</h3>
           </div>
-          <div style="display:flex;flex-direction:column;gap:10px;">
+          <div class="info-stack">
             <div class="toggle-switch">
               <span>Versi Aplikasi</span>
-              <span style="color:var(--muted)">v1.0.0</span>
+              <span class="panel-note">v1.0.0</span>
             </div>
             <div class="toggle-switch">
               <span>Firebase SDK</span>
-              <span style="color:var(--muted)">v10.12.0</span>
+              <span class="panel-note">v10.12.0</span>
             </div>
             <div class="toggle-switch">
               <span>Status Database</span>
@@ -232,7 +147,7 @@
             </div>
             <div class="toggle-switch">
               <span>Sensor Aktif</span>
-              <span style="color:var(--muted)" id="activeSensors">3 dari 4</span>
+              <span class="panel-note" id="activeSensors">3 dari 4</span>
             </div>
           </div>
         </section>

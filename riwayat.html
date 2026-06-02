@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Riwayat Data | Monitoring IoT</title>
   <meta name="description" content="Riwayat lengkap data sensor IoT. Filter dan unduh data historis untuk analisis." />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/style.css?v=1" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
+<body class="dashboard-body">
   <div class="app-shell">
     <!-- Sidebar -->
     <aside class="sidebar">
@@ -22,7 +21,7 @@
         <a href="sensor.html" id="nav-sensor">🌡 Sensor</a>
         <a href="riwayat.html" id="nav-riwayat" class="active">📈 Riwayat</a>
         <a href="pengaturan.html" id="nav-pengaturan">⚙ Pengaturan</a>
-        <a href="#" id="logoutBtn" class="logout">↩ Keluar</a>
+        <a href="login.html" id="logoutBtn" class="logout">↩ Keluar</a>
       </nav>
     </aside>
 
@@ -40,17 +39,17 @@
       </header>
 
       <!-- Filter -->
-      <section class="panel" style="padding: 16px 20px;">
-        <div class="panel-header" style="flex-wrap:wrap;gap:12px;">
+      <section class="panel panel-compact">
+        <div class="panel-header panel-header--wrap">
           <h3>Filter Data</h3>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;">
-            <select id="filterSensor" style="padding:6px 12px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text)">
+          <div class="filter-controls">
+            <select id="filterSensor" class="filter-select">
               <option value="all">Semua Sensor</option>
               <option value="dht22">DHT22 (Suhu/Kelembapan)</option>
               <option value="bmp280">BMP280 (Tekanan)</option>
               <option value="ldr">LDR (Cahaya)</option>
             </select>
-            <select id="filterRange" style="padding:6px 12px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text)">
+            <select id="filterRange" class="filter-select">
               <option>24 Jam Terakhir</option>
               <option>7 Hari</option>
               <option>30 Hari</option>
@@ -84,7 +83,7 @@
               </tr>
             </thead>
             <tbody id="historyTable">
-              <tr><td colspan="4" style="text-align:center;color:var(--muted)">Memuat data...</td></tr>
+              <tr class="table-empty"><td colspan="4">Memuat data...</td></tr>
             </tbody>
           </table>
         </div>

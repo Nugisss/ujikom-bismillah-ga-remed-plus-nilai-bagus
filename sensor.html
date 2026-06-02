@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Data Sensor | Monitoring IoT</title>
   <meta name="description" content="Halaman monitoring data sensor realtime dari semua perangkat IoT yang terhubung." />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/style.css?v=1" />
 </head>
-<body>
+<body class="dashboard-body">
   <div class="app-shell">
     <!-- Sidebar -->
     <aside class="sidebar">
@@ -21,7 +20,7 @@
         <a href="sensor.html" id="nav-sensor" class="active">🌡 Sensor</a>
         <a href="riwayat.html" id="nav-riwayat">📈 Riwayat</a>
         <a href="pengaturan.html" id="nav-pengaturan">⚙ Pengaturan</a>
-        <a href="#" id="logoutBtn" class="logout">↩ Keluar</a>
+        <a href="login.html" id="logoutBtn" class="logout">↩ Keluar</a>
       </nav>
     </aside>
 
@@ -80,7 +79,7 @@
               </tr>
             </thead>
             <tbody id="sensorTable">
-              <tr><td colspan="5" style="text-align:center;color:var(--muted)">Memuat data...</td></tr>
+              <tr class="table-empty"><td colspan="5">Memuat data...</td></tr>
             </tbody>
           </table>
         </div>
