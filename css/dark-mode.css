@@ -1,34 +1,36 @@
 /* Dark mode overrides */
 body.dark {
   --bg: #0b1220;
-  --panel: #0f1724;
-  --muted: #9ca3af;
+  --surface: #111827;
+  --surface-alt: #172135;
+  --navbar: #071127;
+  --panel: #111827;
   --text: #e6eef6;
-  --border: rgba(255,255,255,0.06);
-  --primary: #6366f1;
-  --card-gradient-1: linear-gradient(135deg,#0f1724 0%,#111827 100%);
-}
-
-body.dark {
+  --text-soft: #cbd5e1;
+  --muted: #9ca3af;
+  --border: rgba(255,255,255,0.08);
+  --primary: #818cf8;
+  --gradient: linear-gradient(135deg, #4f46e5, #2563eb);
   background: var(--bg);
   color: var(--text);
 }
 
-body.dark .container,
 body.dark .main,
 body.dark .panel,
 body.dark .login-card,
-body.dark .dashboard-box {
-  background: var(--panel);
-  color: var(--text);
-  border-color: var(--border);
+body.dark .dashboard-box,
+body.dark .login-wrapper,
+body.dark .feature-card,
+body.dark .status-pill,
+body.dark .login-art {
+  background: var(--surface);
 }
 
 body.dark .navbar,
 body.dark .topbar {
-  background: #071127;
+  background: var(--navbar);
   color: var(--text);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 body.dark .sidebar {
@@ -36,16 +38,128 @@ body.dark .sidebar {
   color: var(--text);
 }
 
+body.dark .sidebar-nav a {
+  color: var(--text);
+}
+
+body.dark .sidebar-nav a:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+body.dark .sidebar-nav a.active {
+  background: #3730a3;
+}
+
 body.dark a { color: #c7d2fe; }
-body.dark .muted { color: var(--muted); }
-body.dark .stat-card { background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); }
-body.dark .panel-header h3, body.dark h1, body.dark h2, body.dark h3 { color: var(--text); }
+body.dark .logo strong { color: #a5b4fc; }
+body.dark .muted,
+body.dark .text-soft,
+body.dark .login-brand p,
+body.dark .about p,
+body.dark .section-header p,
+body.dark .hero-text p,
+body.dark .activity-list small {
+  color: var(--text-soft);
+}
 
-body.dark .data-table th, body.dark .data-table td { color: var(--text); border-color: rgba(255,255,255,0.03); }
-body.dark .data-table thead th { background: rgba(255,255,255,0.02); }
+body.dark .stat-card { background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); }
+body.dark .panel-header h3,
+body.dark h1,
+body.dark h2,
+body.dark h3 {
+  color: var(--text);
+}
 
-body.dark .btn { background: rgba(255,255,255,0.03); color: var(--text); border: 1px solid rgba(255,255,255,0.04); }
-body.dark .btn-primary { background: var(--primary); color: #fff; }
+body.dark .data-table th,
+body.dark .data-table td {
+  color: var(--text);
+  border-color: rgba(255,255,255,0.08);
+}
+
+body.dark .data-table thead th {
+  background: rgba(255,255,255,0.04);
+}
+
+body.dark .data-table tbody tr:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+body.dark .btn {
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+body.dark .btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+body.dark .btn-outline {
+  color: #c7d2fe;
+  border-color: rgba(255,255,255,0.18);
+}
+
+body.dark .filter-select,
+body.dark select,
+body.dark .form-field input,
+body.dark .form-field select,
+body.dark .login-form input[type="email"],
+body.dark .login-form input[type="password"] {
+  background: #111827;
+  color: var(--text);
+  border-color: rgba(255,255,255,0.12);
+}
+
+body.dark .badge {
+  background: rgba(147,197,253,0.12);
+  color: #bfdbfe;
+}
+
+body.dark .feature-card {
+  border-color: rgba(255,255,255,0.08);
+}
+
+body.dark .status-pill {
+  background: rgba(255,255,255,0.05);
+  box-shadow: none;
+}
+
+body.dark .login-body {
+  background: radial-gradient(1000px 500px at 10% 10%, rgba(124, 58, 237, 0.18), transparent 60%), radial-gradient(900px 500px at 90% 90%, rgba(6, 182, 212, 0.16), transparent 60%), #020612;
+}
+
+body.dark .login-wrapper {
+  background: #111827;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.55);
+}
+
+body.dark .login-art {
+  background: linear-gradient(135deg, #1e293b, #0f1724);
+}
+
+body.dark .badge-pill.ok {
+  background: #134e4a;
+  color: #a7f3d0;
+}
+
+body.dark .badge-pill.warn {
+  background: #78350f;
+  color: #fef3c7;
+}
+
+body.dark .badge-pill.err {
+  background: #881337;
+  color: #fecdd3;
+}
+
+body.dark .panel {
+  box-shadow: 0 5px 20px rgba(0,0,0,0.18);
+}
+
+body.dark footer {
+  background: #0f1724;
+}
 
 /* Toggle button */
 .dark-toggle {
@@ -66,8 +180,14 @@ body.dark .btn-primary { background: var(--primary); color: #fff; }
   z-index: 9999;
 }
 
-body.dark .dark-toggle { background: linear-gradient(180deg,#0f1724,#071127); color: #e6eef6; }
-.dark-toggle .icon { font-size: 18px; }
+body.dark .dark-toggle {
+  background: linear-gradient(180deg,#0f1724,#071127);
+  color: #e6eef6;
+}
+
+.dark-toggle .icon {
+  font-size: 18px;
+}
 
 @media (max-width: 700px){
   .dark-toggle { right: 12px; bottom: 12px; }
