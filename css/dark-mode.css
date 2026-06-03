@@ -120,6 +120,14 @@ body.dark .feature-card {
   border-color: rgba(255,255,255,0.08);
 }
 
+body.dark .mini-card {
+  background: rgba(255,255,255,0.04);
+}
+body.dark .mini-card small,
+body.dark .mini-card h2 {
+  color: #e2e8f0;
+}
+
 body.dark .status-pill {
   background: rgba(255,255,255,0.05);
   box-shadow: none;
