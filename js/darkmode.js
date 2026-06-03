@@ -38,8 +38,19 @@
     applyTheme(theme);
     const btn = createToggle();
     updateIcon(btn, theme === 'dark');
-    // append to body so it appears on all pages without changing templates
-    document.body.appendChild(btn);
+    // prefer appending into topbar actions when available for dashboard pages
+    const topbarActions = document.querySelector('.topbar .topbar-actions');
+    if(topbarActions){
+      btn.classList.add('in-topbar');
+      // small wrapper for spacing
+      const wrapper = document.createElement('div');
+      wrapper.className = 'dark-toggle-wrap';
+      wrapper.appendChild(btn);
+      topbarActions.appendChild(wrapper);
+    } else {
+      // fallback: append to body so it appears on all pages without changing templates
+      document.body.appendChild(btn);
+    }
   }
 
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

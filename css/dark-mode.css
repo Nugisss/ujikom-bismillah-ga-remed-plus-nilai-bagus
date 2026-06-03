@@ -200,3 +200,10 @@ body.dark .dark-toggle {
 @media (max-width: 700px){
   .dark-toggle { right: 12px; bottom: 12px; }
 }
+
+/* When inserted into the topbar, make the toggle inline and smaller */
+.topbar .dark-toggle-wrap { display: flex; align-items: center; margin-left: 8px; }
+.topbar .dark-toggle { position: static; right: auto; bottom: auto; width: 36px; height: 36px; box-shadow: none; margin-left: 8px; border-radius: 8px; padding: 0; }
+.topbar .dark-toggle .icon { font-size: 16px; }
+.dark-toggle.in-topbar { background: transparent; color: inherit; border: 1px solid rgba(255,255,255,0.04); padding: 6px; }
+
