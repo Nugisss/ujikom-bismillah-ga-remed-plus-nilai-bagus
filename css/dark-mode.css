@@ -1,0 +1,74 @@
+/* Dark mode overrides */
+body.dark {
+  --bg: #0b1220;
+  --panel: #0f1724;
+  --muted: #9ca3af;
+  --text: #e6eef6;
+  --border: rgba(255,255,255,0.06);
+  --primary: #6366f1;
+  --card-gradient-1: linear-gradient(135deg,#0f1724 0%,#111827 100%);
+}
+
+body.dark {
+  background: var(--bg);
+  color: var(--text);
+}
+
+body.dark .container,
+body.dark .main,
+body.dark .panel,
+body.dark .login-card,
+body.dark .dashboard-box {
+  background: var(--panel);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+body.dark .navbar,
+body.dark .topbar {
+  background: #071127;
+  color: var(--text);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+body.dark .sidebar {
+  background: #071127;
+  color: var(--text);
+}
+
+body.dark a { color: #c7d2fe; }
+body.dark .muted { color: var(--muted); }
+body.dark .stat-card { background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); }
+body.dark .panel-header h3, body.dark h1, body.dark h2, body.dark h3 { color: var(--text); }
+
+body.dark .data-table th, body.dark .data-table td { color: var(--text); border-color: rgba(255,255,255,0.03); }
+body.dark .data-table thead th { background: rgba(255,255,255,0.02); }
+
+body.dark .btn { background: rgba(255,255,255,0.03); color: var(--text); border: 1px solid rgba(255,255,255,0.04); }
+body.dark .btn-primary { background: var(--primary); color: #fff; }
+
+/* Toggle button */
+.dark-toggle {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.45);
+  background: linear-gradient(180deg,#ffffff,#f3f4f6);
+  color: #0f1724;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+body.dark .dark-toggle { background: linear-gradient(180deg,#0f1724,#071127); color: #e6eef6; }
+.dark-toggle .icon { font-size: 18px; }
+
+@media (max-width: 700px){
+  .dark-toggle { right: 12px; bottom: 12px; }
+}
