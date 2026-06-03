@@ -37,11 +37,33 @@
     color: inherit !important;
     line-height: 1 !important;
   }
+  .close-btn {
+    position: absolute !important;
+    top: 14px !important;
+    right: 14px !important;
+    width: 34px !important;
+    height: 34px !important;
+    border: none !important;
+    border-radius: 50% !important;
+    background: rgba(255,255,255,0.85) !important;
+    color: #333 !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 18px !important;
+    line-height: 1 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12) !important;
+  }
+  .close-btn:hover {
+    background: rgba(255,255,255,1) !important;
+  }
 </style>
 </head>
 <body class="login-body">
 <div class="login-wrapper">
   <div class="login-card">
+    <button type="button" class="close-btn" onclick="window.location.href='index.html'" aria-label="Kembali ke beranda">×</button>
     <div class="login-brand">
       <img src="img/logo.png" alt="Logo" />
       <h1>Selamat Datang Kembali</h1>
